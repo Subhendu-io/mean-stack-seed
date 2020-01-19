@@ -1,0 +1,17 @@
+<br>
+<ng-container *ngIf="noDashboards; else hasDashboard">
+    <h5 class="m-5 text-primary">No Dashboard Found!</h5>
+</ng-container>
+<ng-template #hasDashboard>
+    <div class="app-button-group">
+        <button class="mr-2" mat-raised-button [ngClass]="{'active': dashboard.dashboardData.dashboardId === selectedDashboard?.dashboardId}" (click)="viewDashboard(dashboard)" *ngFor="let dashboard of dashboards">
+            {{ dashboard?.dashboardData.dashboardName }}
+        </button>
+    </div>
+    <mat-card class="app-workspace-card p-0">
+        <mat-card-content class="app-dashgrid app-mini-scroll">
+            <app-grid [dashboardData]="dashboardData"></app-grid>
+        </mat-card-content>
+    </mat-card>
+</ng-template>
+

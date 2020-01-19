@@ -1,0 +1,50 @@
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+    .app-header-btn{
+        height: 60px;
+    }
+}
+main {
+    margin-top: 60px;
+    .app-sidebar{
+        width: 70px;
+        z-index: 50;
+        position: fixed;
+        overflow: hidden;
+        height: calc(100% - 60px);
+        transition: all .1s ease-out;
+        &:hover{
+            width: 200px;
+            button {
+                width: 200px;
+            }
+        }
+        button {
+            padding: 15px 0;
+            width: 70px;
+            // height: 24px;
+            margin: 0;
+            border-radius: 0;
+            text-align: left;
+            line-height: 24px;
+            background: transparent !important;
+            &.active, &:hover {
+                color: #e67014;
+                border-right: 3px solid #e67014;
+            }
+            .mat-icon {
+                padding: 0;
+                margin: 0px 23px;
+            }
+        }
+    }
+    .app-main {
+        margin-left: 70px;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 100%;
+    }
+}

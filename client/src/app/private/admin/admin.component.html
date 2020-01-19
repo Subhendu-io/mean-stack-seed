@@ -1,0 +1,59 @@
+<div class="h-100" fxLayout="column">
+    <header fxFlex="60px" class="app-brdr-b" fxLayout="row">
+        <div class="pl-3 pt-3">
+            <img height="35" src="assets/indiaFirst.svg" alt="">
+        </div>
+        <div class="app-brdr-r p-3 text-right" fxFlex>
+            Welcome <b class="text-primary text-capitalize">{{ userFullname }}</b> | Last Login: <b class="text-primary text-capitalize">{{ lastlogintime | date : 'MMM d, y, h:mm a' }}</b>
+        </div>
+        <div class="app-brdr-r">
+            <button class="app-header-btn" mat-button><mat-icon>notifications_none</mat-icon></button>
+        </div>
+        <div>
+            <button class="app-header-btn" mat-button [matMenuTriggerFor]="menu"><mat-icon>person</mat-icon></button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    Logout
+                </button>
+            </mat-menu>
+        </div>
+    </header>
+
+    <main fxFlex>
+        <div fxLayout="column" class="app-sidebar app-bg-dark app-txt-lightsky app-box-shadow">
+            <div fxLayout="column" fxLayoutAlign="start start" fxFlex>
+                <button mat-button [routerLink]="['/admin/templates']" routerLinkActive="active">
+                    <mat-icon>view_compact</mat-icon>
+                    <span>Templates</span>
+                </button>
+                <button mat-button [routerLink]="['/admin/reportgroups']" routerLinkActive="active">
+                    <mat-icon>assignment</mat-icon>
+                    <span>Report Groups</span>
+                </button>
+                <button mat-button [routerLink]="['/admin/dashboards']" routerLinkActive="active">
+                    <mat-icon>pie_chart</mat-icon>
+                    <span>Dashboards</span>
+                </button>
+                <button mat-button [routerLink]="['/admin/groups']" routerLinkActive="active">
+                    <mat-icon>group</mat-icon>
+                    <span>Users & Groups</span>
+                </button>
+                <button mat-button routerLinkActive="active">
+                    <mat-icon>format_list_bulleted</mat-icon>
+                    <span>Tasks</span>
+                </button>
+            </div>
+            <div>
+                <button mat-button>
+                    <mat-icon>settings</mat-icon>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="app-main bg-light">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,167 @@
+.app-dashboards{
+    .app-dashboard-container{
+        padding: 10px;
+    }
+    .app-dashboard-card{
+        min-height: 72vh;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding-top: 20px;
+    }
+    .app-dashboard {
+        // box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        .dashboard-item {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 265px;
+            background-color: white;
+            padding: 27px;
+            .app-name{
+                white-space: nowrap;
+                overflow: hidden !important;
+                text-overflow: ellipsis;
+            }
+            h6 {
+                margin: 0;
+            }
+            img {
+                width: 100%;
+                // margin-top: 10px;
+                border: 1px solid whitesmoke;
+            }
+        }
+        .dashboard-item-hover{
+            height: 265px;
+            display: none;
+        }
+        &:hover {
+            .dashboard-item {
+                display: none;
+            }
+            .dashboard-item-hover {
+                border-radius: 5px;
+                overflow: hidden;
+                display: block;
+                padding: 27px;
+                color: white;
+                background-size: cover !important;
+                box-shadow: 0px 0px 20px #cab8be;
+                .app-name{
+                    white-space: nowrap;
+                    overflow: hidden !important;
+                    text-overflow: ellipsis;
+                }
+                h6 {
+                    margin: 0;
+                }
+                mat-checkbox {
+                    margin-top: 5px;
+                }
+                .app-button{
+                    color: white;
+                    border-right: 1px solid #d3d3d35c;
+                    border-radius: 0;
+                    padding: 0px 10px;
+                    height: 30px;
+                    margin-top: 9px;
+                }
+                .app-button:focus{
+                    box-shadow: none;
+                }
+                .app-button.no-border{
+                    border: none;
+                }
+            }
+        }
+    }
+    .app-dashboard-title{
+        margin-top: 20px;
+    }
+    .app-dashboard-add{
+        cursor: pointer;
+        height: 265px;
+        background-color: white;
+        box-shadow: 0px 0px 20px 0px #d8d8d8;
+        .app-add-icon{
+            mat-icon{
+                height: auto;
+                width: auto;
+                font-size: 90px;
+                color: lightgreen;
+            }
+        }
+    }
+    .app-dashboard-add:hover{
+        transition: all ease 0.5s;
+        background-color: lightgreen;
+        box-shadow: 0px 0px 20px lightgreen;
+        .app-add-icon{
+            mat-icon{
+                height: auto;
+                width: auto;
+                font-size: 90px;
+                color: white;
+            }
+        }
+    }
+    .app-create {
+        padding: 20px 30px;
+        .app-create-button {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 17px;
+            color: #28a745;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            .app-create-icon {
+                height: auto;
+                width: auto;
+                padding: 15px;
+                color: #28a745;
+                margin-right: 20px;
+                border-radius: 50%;
+                border: 1px dashed #28a745;
+                box-shadow: 0px 0px 10px lightgrey;
+            }
+        }
+        .app-create-button:hover{
+            .app-create-icon{
+                color: white;
+                border: 1px solid #28a745;
+                background-color: #28a745;
+                box-shadow: 0px 0px 10px rgb(159, 197, 172);
+            }
+        }
+    }
+}
+.app-modal-container{
+    height: 100vh;
+    // padding-top: 20px;
+    .app-modal-close{
+        position: absolute;
+        z-index: 10;
+        top: 20px;
+        right: 30px;
+    }
+    gridster{
+        .gridster-item-dragable{
+            height: 100%;
+            overflow: auto;
+            .app-chart-table{
+                border-top: 1px solid lightgray;
+                border-right: 1px solid lightgray;
+                border-left: 1px solid lightgray;
+                th, td {
+                    padding: 0.4rem;
+                    vertical-align: top;
+                    border-bottom: 1px solid lightgray;
+                    border-top: none;
+                    font-size: .85rem;
+                }
+            }
+        }
+    }
+    
+}

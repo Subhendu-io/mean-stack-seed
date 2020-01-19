@@ -1,0 +1,62 @@
+<div fxLayout="row" class="app-comp-header">
+    <div fxFlex>
+        <h5 class="app-title">Dashboards</h5>
+    </div>
+    <div fxLayout="row">
+        <div class="ml-3">
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search Dashboard">
+        </div>
+        <div class="ml-3">
+            <button mat-mini-fab color="primary" matTooltip="Create a new dashboard" [routerLink]="['/admin/dashboardbuilder']">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="app-comp-body app-dashboards">
+    <mat-card class="app-dashboard-card">
+        <mat-card-content fxLayout="row wrap">
+            <ng-container *ngIf="dashboards?.length === 0; else reportGroupsTemplate">
+                <div class="app-create" [routerLink]="['/admin/dashboardbuilder']">
+                    <div class="app-create-button">
+                        <mat-icon class="app-create-icon">add</mat-icon>
+                        <span>Create a new dashboard</span> 
+                    </div>
+                </div>
+            </ng-container>
+            <ng-template #reportGroupsTemplate>
+                <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" class="app-dashboard-container" *ngFor="let dashboard of dashboards; let i = index">
+                    <div class="app-dashboard">
+                        <div class="dashboard-item">
+                            <h6 class="app-name">{{dashboard?.dashboardData.dashboardName}}</h6>
+                            <p><small>Created on 11/1/2019</small></p>
+                            <img src="assets/images/1.jpg" alt="report-5">
+                        </div>
+                        <div class="dashboard-item-hover" [ngStyle]="{ background: 'url(assets/images/1-Hover.jpg)' }">
+                            <h6 class="app-name">{{dashboard?.dashboardData.dashboardName}}</h6>
+                            <p><small>Created on 11/1/2019</small></p>
+                            <button mat-raised-button matTooltip="{{dashboard?.dashboardData.dashboardDescription}}" color="primary" class="mt-5 mb-4" (click)="viewDashboard(dashboard)">
+                                View Dashboard
+                            </button>
+                            <div fxLayout="row" class="mt-2">
+                                <button mat-button color="default" (click)="openPushDialog(dashboard)">
+                                    <!-- <mat-icon>publish</mat-icon> -->
+                                    Push
+                                </button>
+                                <button mat-button color="default" [routerLink]="['/admin/dashboardbuilder', dashboard['dashboardData']['dashboardId']]">
+                                    <!-- <mat-icon>edit</mat-icon> -->
+                                    Edit
+                                </button>
+                                <button mat-button color="default" (click)="onDeleteDashboard(dashboard, i)">
+                                    <!-- <mat-icon>delete_forever</mat-icon> -->
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </mat-card-content>
+    </mat-card>
+</div>

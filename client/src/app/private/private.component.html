@@ -1,0 +1,63 @@
+<div class="h-100" fxLayout="column">
+    <header fxFlex="60px" fxLayout="row" class="app-brdr-b bg-white">
+        <div class="pl-3 pt-3">
+            <img height="35" src="assets/indiaFirst.svg" alt="">
+        </div>
+        <div class="app-brdr-r p-3 text-right" fxFlex>
+            Welcome <b class="text-primary text-capitalize">{{ userFullname }}</b> | Last Login: <b class="text-primary text-capitalize">{{ lastlogintime | date : 'MMM d, y, h:mm a' }}</b>
+        </div>
+        <div class="app-brdr-r">
+            <button class="app-header-btn" mat-button>
+                <mat-icon>notifications_none</mat-icon>
+            </button>
+        </div>
+        <div>
+            <button class="app-header-btn" mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>person</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logOut()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    Logout
+                </button>
+            </mat-menu>
+        </div>
+    </header>
+    <main fxFlex fxLayout="row" class="bg-light">
+        
+        <div class="app-sidebar bg-white app-box-shadow" fxLayout="column">
+            <div fxLayout="column" fxLayoutAlign="start start" fxFlex>
+                <button mat-button [routerLink]="['/app/workspace']" routerLinkActive="active">
+                    <mat-icon>dashboard</mat-icon>
+                    <span>Workspace</span>
+                </button>
+                <button mat-button [routerLink]="['/app/reportgroups']" routerLinkActive="active">
+                    <mat-icon>pie_chart</mat-icon>
+                    <span>Report Group</span>
+                </button>
+                <button mat-button [routerLink]="['/app/tasks']" routerLinkActive="active">
+                    <mat-icon>format_list_bulleted</mat-icon>
+                    <span>Tasks</span>
+                </button>
+                <button mat-button [routerLink]="['/app/calendar']" routerLinkActive="active">
+                    <mat-icon>calendar_today</mat-icon>
+                    <span>Calendar</span>
+                </button>
+                <button mat-button routerLinkActive="active">
+                    <img width="24" class="ml-4 mr-4" src="assets/logos/yammer-logo-black.svg" alt="">
+                    <span>Yammer</span>
+                </button>
+            </div>
+            <div>
+                <button mat-button>
+                    <mat-icon>settings</mat-icon>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="app-main" fxFlex>
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>

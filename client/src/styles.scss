@@ -1,0 +1,293 @@
+/*
+* Application global variables.
+*/
+
+$white:  #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:  #000;
+
+$blue:    #0073dd;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+$sapp_dark: #11111f;
+$sapp_light: #fbfbff;
+$sapp_primary: #2496f3;
+$sapp_secondary: #e67014;
+$sapp_success: #1bc142;
+$sapp_info: #9be2ff;
+$sapp_warn: #ffb307;
+$sapp_danger: #d9261c;
+$sapp_royal: #7051bb;
+$sapp_lightsky: #dddde8;
+
+$theme-colors: (
+primary: $blue,
+secondary: $gray-600,
+success: $green,
+info: $cyan,
+warning: $yellow,
+danger: $red,
+light: $sapp_light,
+dark: $sapp_dark
+);
+
+// Use Bootstrap defaults for other variables, imported here so we can access all app variables in one place when used
+// @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@font-face {
+font-family: 'Material Icons';
+font-style: normal;
+font-weight: 400;
+src: url("assets/materialicons.woff2") format('woff2');
+}
+
+.material-icons {
+font-family: 'Material Icons';
+font-weight: normal;
+font-style: normal;
+font-size: 24px;
+line-height: 1;
+letter-spacing: normal;
+text-transform: none;
+display: inline-block;
+white-space: nowrap;
+word-wrap: normal;
+direction: ltr;
+-webkit-font-feature-settings: 'liga';
+-webkit-font-smoothing: antialiased;
+}
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/bootstrap";
+
+// @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+// @import "~@fortawesome/fontawesome-free/scss/brands.scss";
+// @import "~@fortawesome/fontawesome-free/scss/regular.scss";
+// @import "~@fortawesome/fontawesome-free/scss/solid.scss";
+
+@import './scss/material';
+@import '~ngx-toastr/toastr';
+
+* {
+    outline: 0 !important;
+}
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.app-bg-dark {background-color: $sapp_dark !important;}
+.app-bg-light {background-color: $sapp_light !important;}
+.app-bg-primary {background-color: $sapp_primary !important;}
+.app-bg-secondary {background-color: $sapp_secondary !important;}
+.app-bg-success {background-color: $sapp_success !important;}
+.app-bg-info {background-color: $sapp_info !important;}
+.app-bg-warn {background-color: $sapp_warn !important;}
+.app-bg-danger {background-color: $sapp_danger !important;}
+.app-bg-royal {background-color: $sapp_royal !important;}
+.app-bg-lightsky {background-color: $sapp_lightsky !important;}
+
+.app-txt-dark {color: $sapp_dark !important;}
+.app-txt-light {color: $sapp_light !important;}
+.app-txt-primary {color: $sapp_primary !important;}
+.app-txt-secondary {color: $sapp_secondary !important;}
+.app-txt-success {color: $sapp_success !important;}
+.app-txt-info {color: $sapp_info !important;}
+.app-txt-warn {color: $sapp_warn !important;}
+.app-txt-danger {color: $sapp_danger !important;}
+.app-txt-royal {color: $sapp_royal !important;}
+.app-txt-lightsky {color: $sapp_lightsky !important;}
+
+.app-brdr-dark {border: 1px solid $sapp_dark !important;}
+.app-brdr-light {border: 1px solid $sapp_light !important;}
+.app-brdr-primary {border: 1px solid $sapp_primary !important;}
+.app-brdr-secondary {border: 1px solid $sapp_secondary !important;}
+.app-brdr-success {border: 1px solid $sapp_success !important;}
+.app-brdr-info {border: 1px solid $sapp_info !important;}
+.app-brdr-warn {border: 1px solid $sapp_warn !important;}
+.app-brdr-danger {border: 1px solid $sapp_danger !important;}
+.app-brdr-royal {border: 1px solid $sapp_royal !important;}
+.app-brdr-lightsky {border: 1px solid $sapp_lightsky !important;}
+
+.app-brdr-t {border-top: 1px solid lightgray !important;}
+.app-brdr-b {border-bottom: 1px solid lightgray !important;}
+.app-brdr-r {border-right: 1px solid lightgray !important;}
+.app-brdr-l {border-left: 1px solid lightgray !important;}
+
+.app-box-shadow {box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2) !important;}
+.app-va-middle{vertical-align: middle;}
+.app-va-super{vertical-align: super;}
+.app-comp-header{padding: 20px 30px 10px 20px;}
+.app-comp-body{padding: 10px 30px 30px 20px;}
+
+.app-title{
+    color: #e67014;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.mat-tab-body.mat-tab-body-active{
+    overflow-y: hidden !important;
+    .mat-tab-body-content{
+        overflow-y: hidden !important;
+    }
+}
+.app-dialog {
+    mat-dialog-header{
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 52px;
+        margin: 0 -24px;
+        padding: 0 24px;
+        margin-top: -24px;
+        align-items: center;
+    }
+    mat-dialog-content{
+        padding: 0 18px;
+    }
+    mat-dialog-actions{
+        margin: 0 -24px;
+        border-top: 1px solid lightgray;
+        padding: 15px 18px;
+        margin-bottom: -24px;
+    }
+}
+.app-add-primary{
+    color: white !important;
+    background-color: #e67014 !important;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5) !important;
+}
+.app-mini-scroll{
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: rgb(233, 250, 255); 
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: rgb(122, 140, 150);
+        border-radius: 10px;
+    }
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgb(60, 70, 80); 
+    }
+}
+// Material Root CSS
+.form-control {
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+}
+.app-mat-list{
+    padding-top: 0px;
+    mat-list-option{
+        border-radius: 3px;
+        height: 65px !important;
+        transition: all ease 0.3s;
+        transform: scale(0.95);
+        p{
+            font-size: 12px !important;
+            margin-top: 2px !important;
+            color: gray;
+        }
+        mat-icon{
+            color: #143363;
+            transition: all ease 0.3s;
+            border: 2px solid lightgray;
+        }
+    }
+    mat-list-option:hover{
+        transform: scale(1);
+        background-color: #d5ecff;
+        mat-icon{
+            border: 2px solid #143363;
+        }
+    }
+    mat-list-item{
+        cursor: pointer;
+        border-radius: 3px;
+        height: 65px !important;
+        transition: all ease 0.3s;
+        transform: scale(0.95);
+        p{
+            font-size: 12px !important;
+            margin-top: 2px !important;
+            color: gray;
+        }
+        mat-icon{
+            color: #143363;
+            transition: all ease 0.3s;
+            border: 2px solid lightgray;
+        }
+    }
+    mat-list-item:hover{
+        transform: scale(1);
+        background-color: #d5ecff;
+        mat-icon{
+            border: 2px solid #143363;
+        }
+    }
+}
+.mat-select {
+    background-color: #efefef;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.mat-tooltip {
+    background-color: white;
+    color: black !important;
+    max-width: 500px;
+    font-size: 0.8rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+// Application root styles
+.toast-container {
+    .ngx-toastr {
+        transition: all ease 0.5s;
+        background-size: 20px;
+        padding: 8px 8px 8px 50px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        .toast-title {
+            font-size: 0.9rem;
+        }
+        .toast-message {
+            font-size: 0.9rem;
+        }
+    }
+    .ngx-toastr:hover{
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    .toast-error {
+        box-shadow: 0 0 15px rgba(150, 0, 0, 0.8);
+    }
+    .toast-success {
+        box-shadow: 0 0 15px rgba(0, 152, 27, 0.8);
+    }
+    .toast-warning {
+        box-shadow: 0 0 15px rgba(150, 100, 0, 0.8);
+    }
+}

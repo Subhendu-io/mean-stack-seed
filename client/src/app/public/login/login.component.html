@@ -1,0 +1,32 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutFill class="w-100 h-100">
+    <div fxFlex="350px">
+        <div class="text-center">
+            <p class="mt-4">User Dashboard</p>
+        </div>
+
+        <form class="app-login-form mt-5" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+            <div fxLayout="column">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email ID</mat-label>
+                    <input matInput autocomplete="none" formControlName="email" type="text" placeholder="Email">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput autocomplete="none" formControlName="password" type="password" placeholder="Password">
+                </mat-form-field>
+            </div>
+            <div class="text-center">
+                <button mat-raised-button color="warn" type="submit">Sign In</button>
+            </div>
+
+            <div fxLayout="row" class="mt-5">
+                <div fxFlex>
+                    <mat-checkbox>Remember me</mat-checkbox>
+                </div>
+                <div>
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

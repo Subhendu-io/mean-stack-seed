@@ -1,0 +1,33 @@
+<form class="app-dialog">
+    <mat-dialog-header class="app-dialog-header app-bg-primary">
+        <h6 class="app-title app-txt-light mb-0">Push {{ dashboardDetails.dashboardName }} </h6>
+    </mat-dialog-header>
+    <mat-dialog-content class="app-dialog-content pb-3">
+        <mat-tab-group>
+            <mat-tab label="Users">
+                <mat-selection-list class="app-mat-list" fxLayout="row wrap" (selectionChange)="onSelection($event)">
+                    <mat-list-option fxFlex="100" *ngFor="let user of users" [value]="user?.userId" [selected]="user?.selected">
+                        <mat-icon matListIcon>person</mat-icon>
+                        <h3 matLine>{{user?.fullName}}</h3>
+                        <p matLine>{{user?.username}}</p>
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-tab>
+            <mat-tab label="User Groups">
+                <mat-selection-list class="app-mat-list" fxLayout="row wrap" (selectionChange)="onSelectionGroup($event)">
+                    <mat-list-option fxFlex="100" *ngFor="let userGroups of userGroups" [value]="userGroups?.groupId">
+                        <mat-icon matListIcon>group</mat-icon>
+                        <h3 matLine>{{userGroups?.groupName}}</h3>
+                        <p matLine>{{userGroups?.name}}</p>
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-dialog-content>
+    <mat-dialog-actions class="app-dialog-actions app-brdr-t" align="end">
+        <button mat-raised-button (click)="onClose()">Cancel</button>
+        <button mat-raised-button (click)="onSubmitPush()" class="app-bg-primary app-txt-light">
+            Submit
+        </button>
+    </mat-dialog-actions>
+</form>
